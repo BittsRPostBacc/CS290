@@ -1,0 +1,12 @@
+/Module1/assignment1_app/node_modules/
+/Module2/deepEqual/node_modules/
+/Module3/forms/node_modules/
+/Module3/hello_express/node_modules/
+/Module3/serve_static/node_modules/
+/Module3/zip_lookup/node_modules/
+/Module1/assignment1_app/package-lock.json
+/Module2/deepEqual/package-lock.json
+/Module3/forms/package-lock.json
+/Module3/hello_express/package-lock.json
+/Module3/serve_static/package-lock.json
+/Module3/zip_lookup/package-lock.json
