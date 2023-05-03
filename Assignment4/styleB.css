@@ -1,0 +1,56 @@
+/* Randy Bitts */
+/* bittsr@oregonstate.edu */
+
+body {
+    background-color: chocolate;
+    font-family: "American Typewriter", serif;
+}
+
+h1 {
+    background-color: blueviolet;
+    width: 500px;
+    font-family: Ayuthaya, ui-monospace;
+}
+
+table, th, tr {
+    border: 2px solid grey;
+    padding: 3px;
+}
+
+table, tr, td {
+    border: 1px solid orange;
+    padding: 3px;
+}
+
+#styleA {
+    font-family: "American Typewriter", serif;
+}
+
+#styleB {
+    font-family: "American Typewriter", serif;
+}
+
+a:visited {
+    color: aquamarine;
+}
+
+#o {
+    font-size: 100px;
+    color: orange;
+}
+
+#s {
+    font-size: 100px;
+    color: black;
+    position: relative;
+    top: 80px;
+    left: 10px;
+}
+
+#u {
+    font-size: 100px;
+    color: grey;
+    position: relative;
+    top: 175px;
+    left: 15px;
+}

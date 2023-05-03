@@ -1,0 +1,114 @@
+/*static*/
+/*
+Static or normal positioning is specified using the declaration
+    position: static;.
+It is also used when there is no declaration for position.
+*/
+
+/*stylesheet does not have any position declaration.
+This means that the browser will use static positioning with this stylesheet.*/
+/*#div1 {*/
+/*    background-color: red;*/
+/*    height: 150px;*/
+/*    width: 25px;*/
+/*}*/
+
+/*#div2 {*/
+/*    background-color: green;*/
+/*    height: 25px;*/
+/*    width: 25px;*/
+/*}*/
+
+/*relative*/
+/*
+Elements with relative positioning are moved in relation to where they would be placed by the static positioning.
+The properties top, right, bottom and left can be used to specify the offset by which element should be moved from
+    the position it would be placed in if static positioning were being used.
+*/
+
+/*
+If the following stylesheet is used, the element with id div2 will be positioned 50 pixels from the left and
+  25 pixels from the top from its static position. This means the element will be shifted to the right
+   and to the bottom from its static position.
+*/
+
+/*#div1 {
+    background-color: red;
+    height: 150px;
+    width: 25px;
+}
+
+#div2 {
+    background-color: green;
+    height: 25px;
+    width: 25px;
+    position: relative;
+    top: 25px;
+    left: 50px;
+} */
+
+/*absolute*/
+/*
+Elements with absolute positioning are positioned in relation to the parent element. The properties top, right,
+bottom and left can be used to specify the offset by which element should appear relative to its parent element.
+*/
+
+/*
+If the following stylesheet is used, the element with id div2 will be positioned 50 pixels from the left and 0 pixels
+    from the top of its parent element. In the HTML document, the parent of div2 element is the body element.
+This means the element with id div2 will be positioned 50 pixels to the right of the top left corner of the document
+    window as long as the top of the document is visible in the window. If the top of the document is not visible
+    in the window because of scrolling, this element will also not be visible.
+*/
+/*
+#div1 {
+    background-color: red;
+    height: 150px;
+    width: 25px;
+}
+
+#div2 {
+    background-color: green;
+    height: 25px;
+    width: 25px;
+    position: absolute;
+    top: 0px;
+    left: 50px;
+}
+*/
+/*fixed*/
+/*
+Elements with fixed positioning are positioned with respect to the document window.
+    If we scroll the page, the fixed element will scroll with the page.
+Using fixed position, we can, for example, make a nav bar always appear at the top of the page.
+*/
+/*
+If the following stylesheet is used, the element with id div2 will be positioned 50 pixels from the left and 0 pixels
+    from the top of the document window.
+This means the element with id div2 will be positioned 50 pixels to the right of the top left corner of the
+    document window.
+The element will remain at this position even if the window was small enough to require scrolling and we scrolled down
+    so that the top of the document was no longer visible.
+*/
+
+#div1 {
+    background-color: red;
+    height: 150px;
+    width: 25px;
+}
+
+#div2 {
+    background-color: green;
+    height: 25px;
+    width: 25px;
+    position: fixed;
+    top: 0px; /* 0px is not necessary, 0 is enough*/
+    left: 50px;
+}
+/* With this, is you scroll the page, the div2 elements stays in position because it is fixed */
+
+/*sticky*/
+/* relatively new and we won't be learning about it
+More here: https://developer.mozilla.org/en-US/docs/Web/CSS/position#sticky_positioning
+ */
+

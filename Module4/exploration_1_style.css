@@ -1,0 +1,43 @@
+body {
+  background-color: antiquewhite;
+}
+
+h1 {
+  color: red;
+  font-size: 30px;
+}
+
+p {
+  color: green;
+}
+
+#red-p {
+  color: red;
+  border: 1px solid black;
+  width: 500px;
+}
+
+.large {
+  font-size: 20px;
+}
+
+li.large {
+  font-size: 40px;
+}
+
+footer p {
+  font-size: 10px;
+}
+
+a:link{
+  color: green;
+}
+
+a:visited{
+  color: orange;
+}
+
+#change-on-hover:hover {
+  color: white;
+  background: green;
+}

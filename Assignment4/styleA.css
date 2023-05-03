@@ -1,0 +1,49 @@
+/* Randy Bitts */
+/* bittsr@oregonstate.edu */
+
+body {
+    background-color: aliceblue;
+    font-family: Baskerville, fantasy;
+}
+
+h1 {
+    background-color: azure;
+    font-family: "Bodoni 72 Oldstyle", sans-serif;
+}
+
+table, th, tr {
+    border: 2px solid orange;
+    padding: 3px;
+}
+
+table, tr, td {
+    border: 1px solid black;
+    padding: 3px;
+}
+
+#styleA {
+    font-family: Baskerville, fantasy;
+}
+
+#styleB {
+    font-family: Baskerville, fantasy;
+}
+
+a:link {
+    color: darkblue;
+}
+
+#o {
+    font-size: 100px;
+    color: orange;
+}
+
+#s {
+    font-size: 100px;
+    color: black;
+}
+
+#u {
+    font-size: 100px;
+    color: grey;
+}

@@ -1,0 +1,91 @@
+/*Type Selector*/
+h1 {
+    color: red;
+    font-size: 25pt;
+}
+
+/*ID Selector */
+#vvip {
+    font-weight: bold;
+}
+
+/*Class Selector*/
+.navigation {
+    font-size: 16pt;
+}
+
+/* It is possible to specify rules that apply to multiple selectors.
+This is done by specifying multiple selectors separated by commas.
+Here is an example rule that selects paragraphs and list elements and sets their color to blue.
+ */
+
+p, li {
+    color: blue;
+}
+
+/*Code from the Exploration 1 video - completed file is exploration_1_style.css and exploration_1_index.html*/
+body {
+    background-color: antiquewhite;
+}
+
+h1 {
+    color: red;
+    font-size: 30px;
+}
+
+p {
+    color: green;
+}
+
+#red-p {
+    color: red;
+    border: 1px solid black;
+    width: 500px;
+}
+
+/*Notice the . in the below 2 to make 2 distinct ID's that contain the same name/work*/
+.large {
+    font-size: 20px;
+}
+
+/*This is a complex selector*/
+li.large {
+    font-size: 40px;
+}
+
+/*Location based selectors - combinators*/
+
+/*Complex selectors - see above*/
+
+/*Pseudo Selectors*/
+/*selectors that are based on the state of an element.*/
+/*General syntax of a pseudo selector*/
+/*selector:pseudo-class {*/
+/*    property: value;*/
+/*}*/
+
+/*Common Pseudo selector uses:*/
+/* hover over a paragraph */
+p:hover{
+    color: white;
+    background: black; }
+
+/* unvisited link */
+a:link {
+    color: green;
+}
+
+/* visited link */
+a:visited {
+    color: purple;
+}
+
+#change-on-hover:hover {
+    color: white;
+    background: green;
+}
+
+
+
+
+

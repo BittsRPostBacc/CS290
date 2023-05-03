@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Module 4 Exploration 1 CSS Introduction</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<!--This is controlled by the Type Selector in css-->
+<h1>
+    Introduction to CSS
+</h1>
+<p>
+    Let's learn about CSS!
+</p>
+<h1>
+    Changing the color and size of h1 elements
+</h1>
+<p>
+    In style.css, we are using the selector h1 to select all h1 elements. We use the color and size properties to specify the color and size we want for these elements.
+</p>
+<!--This is controlled by the ID Selector in css-->
+<ol>
+    <li id="vvip">Very very important!</li>
+</ol>
+<!--This is controlled by the Class Selector in css-->
+<nav class="navigation">
+    This text will be in font-size 16pt because of the above rule.
+</nav>
+<!--So when should use classes vs. IDs as selectors in our rules? Consider the following:
+In a single page, an ID can be used only be one element, whereas a class can be reused by multiple elements
+Thus, IDs are good for anchoring and specifying unique blocks, whereas classes are more about design properties
+that get used again and again.-->
+</body>
+</html>
+
+<!-- Three ways to add Styles to an HTML document-->
+<!--
+<head>
+  <link rel="stylesheet" type="text/css" href="style.css" />   // This is #1.  External, can be shared by multiple pages
+  <style type="text/css">  // This is #2 - Internal, css style specific to that webpage / section
+    body{
+      font-family: Tahoma;
+    }
+  </style>
+</head>
+<body>
+  <p style="font-size:20pt">  // This is #3 - Inline, applies to that section only
+    This is size 20.
+  </p>
+  This is the default size.
+</body>
+-->
+
+<!--
+Precedence:
+Inline (#3) wins
+Internal (#2) overrides External
+External (#3) is applied at load, then everything else takes over
+
+Rules with a more specific selector take precedence over those with more general selectors. For example
+p is more specific than *.
+p em is more specific than p.
+Rules associated with id override rules associated with class.
+Rules associated with class override rules associated with tags.
+
+keep the styling rules as simple as possible:
+
+Try to use a single .css file.
+Do not use inline styles.
+-->
+
+<!--
+Colors
+    Hex - form #RRGGBB
+    Decimal - form rgb(x, y, z)
+    Named - red, green, blue etc (more limited than the above two
+-->
+
+<!--Length Units-->
+<!--
+Absolute
+    cm, in, pt (points = 1pt = 1/72 of an inch), px (pixels = 1px = 1/96th of an inch,
+                                                        browsers may ignore and use display resolution instead
+Relative
+    Relative units allow the size of an element or the distance between elements to scale relative to other
+        elements on the screen
+
+    Most commonly used are em and rem
+    em - is a relative unit based on the current font size of the parent element.  (emulate?)
+    rem - is a relative unit based on the current font size of the root element    (root emulate?)
+-->
+
+<!--Box Model-->
+<!--
+CSS treats each HTML element as if it were its own self contained box.
+There are two box types - block level and inline
+Elements such as h1, p, ul, li are block-level elements and start on a new line,
+    whereas elements such as img, b, i are inline elements and do not start a new line.
+
+The most important properties to control the sizing of the box are (from top/outside to middle/inner):
+    Margin
+    Border
+    Padding
+    Height / Width
+
+Size Properties in the Box Model
+
+Element.
+    We can specify width and height properties to override element defaults.
+Padding.
+    We can specify the size of the padding using the properties padding-top, padding-right, padding-bottom and padding-left.
+Margin.
+    We can specify the size of the margin using the properties maring-top, margin-right, margin-bottom and margin-left.
+Border.
+    We can specify the color, style, and width of the border at the top, bottom, left, and right,
+        using 12 different properties.
+    The names of the properties for controlling the border at the top are border-top-color,
+        border-top-style and border-top-width.
+    The names of the properties corresponding to the border at the bottom have the word bottom instead of top
+        in their names.
+    Similarly, replace top by left or right for properties corresponding to the border on the left
+        or the one on the right.
+
+Note:
+Typically the sizes of the padding are declared using one of many abbreviated forms. For example:
+The declaration
+    padding: 10px;
+means that all 4 padding sizes are 10px.
+The declaration
+    padding: 10px 20px 30px 40px;
+specifies the 4 padding sizes in the order top, right, bottom, and left.
+These abbreviated forms are also used for margin and border.
+-->
+
+<!--Positioning-->
+<!-- See position_examples.html and position_examples.css-->
+
+<!--DOM (Document Object Model) -->
+<!--
+The DOM is the model that a browser uses to render a web page. As a first step to rendering a page, the browser parses
+the HTML document and creates a DOM tree from it. From there the browser renders the page by rendering each node of the
+DOM tree. The DOM gives a representation of a document as a logical tree of nodes and includes an API for interacting
+with this tree representation. This allows us to write programs to dynamically access and modify the content, structure,
+and style of an HTML document.
+-->
+<!--Trees-->
+<!--
+A tree is made up of nodes. Each node has exactly one parent (with one exception noted below). However, a node can have
+    an unlimited number of children.
+If a node has no children it is called a leaf. Nodes that are children of the same parent are called siblings.
+In an HTML DOM tree, the order of the siblings is significant as it determines which gets rendered first
+    (and thus usually higher) in the page.
+-->
+
+<!--
+Another important property of trees is that a tree cannot have cycles. This means that:
+
+If we are at a node X and we navigate up the tree to X’s parent, and then to X’s parent’s parent, and so on,
+    we will never arrive back to X. Our navigation will stop at the root node.
+If we are at a node X and we navigate down the tree of any one X’s children, then keep navigating down the tree to any
+one of that node’s children, and so on, we will never arrive back at X. Our navigation will stop at a leaf node.
+-->
+
+<!--Javascript and DOM-->
+<!--
+When JavaScript is running in the browser, two global objects window and document are available to the JavaScript code.
+The object window represents the browser window and the object document represents the webpage currently loaded in this
+browser window. The object document gives us an entry point into the DOM tree that the browser has built up after it
+parsed the webpage. document is also available as a property of window, i.e., window.document.
+The properties document.head and document.body respectively correspond to the head and body element of the document.
+-->
+
+
+
