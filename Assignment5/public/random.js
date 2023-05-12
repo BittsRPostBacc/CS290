@@ -1,45 +1,33 @@
 'use strict'
 
-import { json } from "express";
-
-// import modules from sever.mjs
-
-
 // variable declarations
-let randomUserDetails = document.createElement('ul');
 let response;
 let jsonData;
 
 // function definitions
 function parseJSON(jsonToParse) {
-  let firstName = document.createElement('p');
-  let lastName = document.createElement('p');
-  let phoneNum = document.createElement('p');
-  let emailAddr = document.createElement('p');
+  let firstName = document.createElement('li');
+  let lastName = document.createElement('li');
+  let phoneNum = document.createElement('li');
+  let emailAddr = document.createElement('li');
 
   firstName.innerText = `First name:    ${jsonToParse.results[0].name.first}`;
   lastName.innerText = `Last name:      ${jsonToParse.results[0].name.last}`;
   phoneNum.innerText = `Phone Number:   ${jsonToParse.results[0].phone}`;
   emailAddr.innerText = `Email Address: ${jsonToParse.results[0].email}`;
-
-  // get the body of the page where data can be displayed
-  let browserAPIBody = document.getElementsByTagName('body')[0];
-
   // add the DOM attributes to the body
-  browserAPIBody.appendChild(firstName);
-  browserAPIBody.appendChild(lastName);
-  browserAPIBody.appendChild(phoneNum);
-  browserAPIBody.appendChild(emailAddr);
-  console.log(`First: ${firstName}`)
-  console.log(`Last: ${lastName}`)
-  console.log(`Phone: ${phoneNum}`)
-  console.log(`Email: ${emailAddr}`)
+  let browserAPI = document.getElementById('browserFetched');
+  browserAPI.appendChild(firstName);
+  browserAPI.appendChild(lastName);
+  browserAPI.appendChild(phoneNum);
+  browserAPI.appendChild(emailAddr);
 }
 
 async function fetchRandomUserData() {
   console.log("Fetching data...");
   response = await fetch("https://randomuser.me/api/");
   jsonData = await response.json();
+  requestCounter();
   console.log(jsonData);
   parseJSON(jsonData)
 }
@@ -51,55 +39,19 @@ const expressAPI = async() => {
 
   data = data.data;
 
-  let apiFirstName = document.createElement('p');
-  let apiLastName = document.createElement('p');
-  let apiPhoneNum = document.createElement('p');
-  let apiEmailAddr = document.createElement('p');
+  let apiFirstName = document.createElement('li');
+  let apiLastName = document.createElement('li');
+  let apiPhoneNum = document.createElement('li');
+  let apiEmailAddr = document.createElement('li');
 
-  apiFirstName.innerText = `First name:    ${jsonToParse.results[0].name.first}`;
-  apiLastName.innerText = `Last name:      ${jsonToParse.results[0].name.last}`;
-  apiPhoneNum.innerText = `Phone Number:   ${jsonToParse.results[0].phone}`;
-  apiEmailAddr.innerText = `Email Address: ${jsonToParse.results[0].email}`;
+  apiFirstName.innerText = `First name:    ${data.results[0].name.first}`;
+  apiLastName.innerText = `Last name:      ${data.results[0].name.last}`;
+  apiPhoneNum.innerText = `Phone Number:   ${data.results[0].phone}`;
+  apiEmailAddr.innerText = `Email Address: ${data.results[0].email}`;
 
-  let fetchAPIBody = document.getElementsByTagName('body')[0];
+  let fetchAPIBody = document.getElementById('expressFetched');
   fetchAPIBody.appendChild(apiFirstName);
   fetchAPIBody.appendChild(apiLastName);
   fetchAPIBody.appendChild(apiPhoneNum);
   fetchAPIBody.appendChild(apiEmailAddr);
 }
-
-// console.log("Fetching data...");
-// getJSON("https://randomuser.me/api/").then(data => {
-//   console.log(data);
-//   parseJSON(data);
-// }).catch(error => {
-// console.error(error);
-// });
-
-// function registerHandlers() {
-
-//   function browserAPI(event) {
-//     // event.preventDefault();
-//   //   async function fetchRandomUserData() {
-//   //     console.log("Fetching data...");
-//   //     response = await fetch("https://randomuser.me/api/");
-//   //     jsonData = await response.json();
-//   //     console.log(jsonData);
-//   //     // return jsonData
-//   //   }
-//   console.log("Hello")
-//   }
-//   async function fetchRandomUserData() {
-//     console.log("Fetching data...");
-//     response = await fetch("https://randomuser.me/api/");
-//     jsonData = await response.json();
-//     console.log(jsonData);
-//     // return jsonData
-//   }
-
-//   function sayHello() {
-//     console.log("Hello")
-//   }
-
-//   document.getElementById("browserAPI").addEventListener("click", fetchRandomUserData);
-// }

@@ -109,7 +109,29 @@ function makeRequest(location) {
 
 function processRequest(response) {
     return new Promise((resolve, reject) => {
-        console.log('Processing resonse');
+        console.log('Processing response');
         resolve(`Extra information + ${response}`);
     })
 }
+
+// makeRequest('Facebook').then(response => {
+//     console.log('Response received')
+//     return processRequest(response)
+// }).then(processedResponse => {
+//     console.log(processedResponse)
+// }).catch(err => {
+//     console.log(err)
+// })
+
+// must be wrapped in a function, with the async and await keywords
+async function doWork() {
+    try {
+        const response = await makeRequest('Facebook')
+        console.log('Response Received')
+        const processedResponse = await processRequest(response)
+        console.log(processedResponse)
+    } catch (err) {
+        console.log(err)
+    }
+}
+doWork()

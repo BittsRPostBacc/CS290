@@ -14,18 +14,16 @@ app.use(express.static('public'));
 // variable declarations
 let httpRequestCounter = 0
 
-
-// function definitions
-const requestCounter = function (req, res, next) {
-    if (req.path == '/') {
-        httpRequestCounter++;
-        res.json(req.path);
-        if (httpRequestCounter % 10 == 0) {
-            console.log(`There have been ${httpRequestCounter} HTTP requests`)
-        }
+export default function requestCounter() {
+    httpRequestCounter++;
+    if (httpRequestCounter % 10 === 0) {
+        console.log(`There have been ${httpRequestCounter} random person requests`);
     }
 }
-
+app.get('/randomPerson',( req, res, next) => {
+    requestCounter();
+    next();
+});
 app.get('/randomPerson', async(req, res) => {
     try {
         const response = await fetch('https://randomuser.me/api/');
@@ -40,18 +38,6 @@ app.get('/randomPerson', async(req, res) => {
         })
     }
 })
-
-app.use(requestCounter);
-
-export const fetchJSON = async url => {
-    const response = await fetch(url);
-    if(!response.ok) // check if response worked (no 404 errors etc...)
-      throw new Error(response.statusText);
-  
-    const data = response.json(); // get JSON from the response
-    return data; // returns a promise, which resolves to this data value
-  }
-
 
 
 // Note: Don't add or change anything below this line.
