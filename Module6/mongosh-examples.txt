@@ -1,0 +1,70 @@
+// Show all the databases
+show dbs
+
+// To use the database movies_db
+use movies_db
+
+// Show all the collections in the current database
+show collections
+
+// Insert documents in the collection movies. 
+// Note that if the collection doesn't exist, it will be automatically created on the first insert.
+
+db.movies.insertOne({
+    title: "No Country For Old Men",
+    year: 2007,
+    language: "English"
+})
+
+db.movies.insertOne({
+    title: "Eternal Sunshine Of The Spotless Mind",
+    year: 2004,
+    language: "English"
+})
+
+
+db.movies.insertOne({
+    title: "Sorry to Bother You",
+    year: 2018,
+    language: "English"
+})
+
+
+db.movies.insertOne({
+    title: "Trainspotting",
+    year: 1996,
+    language: "English"
+})
+
+db.movies.insertOne({
+    title: "Parasite",
+    year: 2018,
+    language: "Korean"
+})
+
+// Return one document at random
+db.movies.findOne()
+
+
+// Return all the documents.
+db.movies.find()
+
+// Return all the documents in which the property "year" has the value 2018.
+db.movies.find({year: 2018})
+
+// Return all the documents in which the property "year" has the value 2018 
+// and the "title" has the value "Parasite"
+db.movies.find({year: 2018, title: "Parasite"})
+
+// NOTE: Before running this command update the value of _id to the value displayed to you when you inserted this movie.
+// Update the document with the specified ObjectId value.
+// The value of the property "year" will be set to 2016 and the value of the property "name" will be set to "Parasite".
+// If the property already existed, its value will be updated. If not, a new property will be added.
+db.movies.updateOne({"_id": ObjectId("64617ae570cb32ed518bd705")}, {$set: {"year": 2018, name: "Parasite"}})
+
+// NOTE: Before running this command update the value of _id to the value displayed to you when you inserted this movie.
+// Delete the document with the specified ObjectId value.
+db.movies.deleteOne({"_id": ObjectId("64617ae570cb32ed518bd705")})
+
+// Delete all documents in which the property "language" has the value "English".
+db.movies.deleteMany({language: "English"})
