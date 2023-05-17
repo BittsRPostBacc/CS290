@@ -1,0 +1,42 @@
+// Create a few documents in a movie collection
+http://localhost:3002/create?title=Sorry to Bother You&year=2018&language=English
+
+http://localhost:3002/create?title=Eternal Sunshine Of The Spotless Mind&year=2004&language=English
+
+http://localhost:3002/create?title=High Fidelity%20&year=2000&language=English
+
+http://localhost:3002/create?title=Anchorman&year=2004&language=English
+
+http://localhost:3002/create?title=No Country For Old Men&year=2007&language=English
+
+http://localhost:3002/create?title=A Serious Man&year=2009&language=English
+
+http://localhost:3002/create?title=City Of God &year=2003&language=Portuguese
+
+http://localhost:3002/create?title=Parasite&year=2019&language=Korean
+
+http://localhost:3002/create?title=Tombstone&year=1990&language=English
+
+// Retrieve all the movies in our collection
+http://localhost:3002/retrieve
+
+// Retrieve movies for 2018
+http://localhost:3002/retrieve?year=2018
+
+// Retrieve movies for 1990
+http://localhost:3002/retrieve?year=1990&language=English
+
+// Note the _id value returned by the following request and use it in the update and delete requests
+http://localhost:3002/create?title=Burning&year=2019&language=Korean
+
+// Note: replace the value of _id in the following URL with the _id value from the previous request
+http://localhost:3002/update?_id=6463102aa8c887e4ba2c48a1&title=Burning&year=2018&language=Korean
+
+// The request should include the updated movie if you fully implement the update route handler
+http://localhost:3002/retrieve?year=2018
+
+// Note: replace the value of _id in the following URL with the _id value from the earlier request
+http://localhost:3002/delete?_id=6463004008a48c35499045b5
+
+// The request should not include the deleted movie
+http://localhost:3002/retrieve?year=2018

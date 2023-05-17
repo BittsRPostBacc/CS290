@@ -1,0 +1,11 @@
+http://localhost:3000/create?name=Cher Gray&age=27&email=cher@example.com&phoneNumber=8114482
+ID = 6464526a4dbd4216973602a4
+http://localhost:3000/create?name=Remco Evenepoel&age=22&email=remco@lottoquickstep.com&phoneNumber=4257857898
+ID = 646399575ec6e6df907a7ad3
+
+http://localhost:3000/retrieve?_id=646398585ec6e6df907a7ad1
+http://localhost:3000/retrieve
+
+http://localhost:3000/update?_id=646398585ec6e6df907a7ad1&age=27&phoneNumber=121934567
+
+http://localhost:3000/delete?age=27
