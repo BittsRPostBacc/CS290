@@ -24,7 +24,11 @@ app.get('/retrieve', asyncHandler(async (req, res) => {
         filter = req.query
     }
     const result = await users.searchUser(filter);
-    res.send(result);
+    if (result.length > 0) {
+        res.send(result);
+    } else {
+        res.send("0 users")
+    }
 }))
 
 /**
