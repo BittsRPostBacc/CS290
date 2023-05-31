@@ -99,3 +99,30 @@ export default App;
  * See the App.js and Greeting.js files for example of this
  * Example of the component tree, App is the parent, Greeting is the child
  */
+
+/**
+ * Structure of React Apps
+ *
+ * We just created a React app that used a component, Greeting, that was defined by us. We will now review this app to
+ * highlight the high-level structure which is common to React apps. Understanding this structure will help us understand existing React apps, and design and implement new React apps.
+ *
+ * Component Tree
+ *
+ * Components in a React app are arranged in a tree structure with the App component as the root of the tree.
+ * When we are thinking about a React app (either to understand an existing app or to design a new one), it is helpful
+ * to draw the components in the app as a tree to visualize the app at a high level.
+ *
+ * Example: In our example Greeting app, the component tree has just 2 components. The App component is at the root of
+ * the tree and it has one child, the Greeting component. However, typical React apps will have many components and
+ * the component tree would be more complex.
+ *
+ * Passing Data Via Properties
+ *
+ * In React apps, data can be easily passed down from a parent component to a child component. This mechanism is built
+ * into React because when instantiating a child component, the parent component can pass data by setting the
+ * attributes of the child component. Thus data can flow along the React component tree from a node to any of its
+ * descendant nodes. This is called “top-down” or “unidirectional” data flow.
+ *
+ * Example: In our example Greeting app, the App component passes down two properties, name and time, to the Greeting
+ * component.
+ */
